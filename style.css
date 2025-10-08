@@ -30,7 +30,7 @@ background-color: #ffffff;
 
 .main{
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     
@@ -287,7 +287,8 @@ text-transform: capitalize;
     width: 600px;
     height: 450px;
     border-radius: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    perspective: 600px;
 }
 
 .video-content video{
@@ -295,6 +296,16 @@ text-transform: capitalize;
     height: 100%;
     border-radius: 20px;
     object-fit: cover;
+    transition: all ease-in-out 0.5s;
+}
+
+.video-content video:hover{
+    transform: rotatex(20deg);
+    
+    /* transform:scale(1.5); */
+    /* transform: rotate(45deg); */
+    /* transform: skew(20deg,30deg); */
+    /* transform: matrix(3,0.5,0.5,3,30,30); */
 }
 
 
@@ -347,7 +358,7 @@ text-transform: capitalize;
 
 .cards-section{
     padding-top: 25px;
-    height: 100%;
+    height: auto;
     width: 100%;
     /* background-color: gray; */
     display: flex;
@@ -409,9 +420,11 @@ text-transform: capitalize;
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
+    /* justify-content: space-around; */
+    gap: 30px;
+    padding: 20px;
     flex-wrap: wrap;
+    /* background-color: red; */
 }
 
 .card{
@@ -430,11 +443,17 @@ text-transform: capitalize;
     object-position: center;
 
 }
+.img-card video{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
 
 .black-shadow-card{
     width: 100%;
     height: 100px;
-    background: linear-gradient(transparent,black);
+    background: linear-gradient(transparent,rgba(0, 0, 0, 0.818));
     position: absolute;
     transition: all ease-in-out 0.3s;
     bottom: -40%;
@@ -450,7 +469,8 @@ text-transform: capitalize;
 }
 .black-shadow-card h1{
     color: white;
-    font-size: 20px;
+    font-size: 14px;
+    width: calc(100% - 85px);
 
 }
 .black-shadow-card button{
@@ -464,12 +484,15 @@ text-transform: capitalize;
     color: #000000;
 }
 .black-shadow-card button:nth-child(1):hover  {
-    background-color: rgb(34, 26, 255);
+    background-color: #7acfd3;
 }
 .black-shadow-card button:nth-child(2):hover  {
-    background-color: red;
+    background-color: rgb(255, 53, 53);
 }
 
+.like-save-btns{
+    width: 85px;
+}
 
 
 .card-name-container{
@@ -492,4 +515,78 @@ text-transform: capitalize;
     gap: 10px;
     padding-right: 5px;
     cursor: pointer;
+}
+
+
+
+
+
+
+.signup-btn{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+}
+
+
+.signup-btn button{
+    background-color: black;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+}
+
+
+
+.carousel-container{
+    /* background-color: #8c00ff; */
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow: auto;
+
+}
+/* .carousel-container::-webkit-scrollbar{
+    display: none;
+} */
+
+.mov-card{
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px -10px 0px black;
+    transition: all ease-in-out 0.3s;
+}
+
+.mov-card:hover{
+    box-shadow: 10px -10px 10px black;
+
+}
+
+
+.mov-card img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+.moving-cards h3{
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.moving-cards{
+    flex-shrink: 0;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 180px;
+    /* padding: 10px; */
 }
